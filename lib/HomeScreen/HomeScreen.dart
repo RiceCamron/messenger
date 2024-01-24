@@ -34,19 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
         content: "Сделай мне кофе, пожалуйста",
         from_id: "0",
         c_id: "0",
-        time: "21:41"
+        time: "21:41",
+        date: "01.01.23"
       ),
       MessageModel(
         content: "Окей",
         from_id: "1",
         c_id: "0",
-        time: "21:41"
+        time: "21:41",
+        date: "01.01.23"
       ),
       MessageModel(
         content: "Уже сделал?",
         from_id: "0",
         c_id: "0",
-        time: "21:41"
+        time: "21:41",
+        date: "01.01.23"
       ),],
         avatar: "assets/avatars/avatar1.svg",
       ),
@@ -59,7 +62,8 @@ class _HomeScreenState extends State<HomeScreen> {
         content: "Я готов",
         from_id: "1",
         c_id: "1",
-        time: "20:20"
+        time: "20:20",
+        date: "01.01.23"
       ),],
         avatar: "assets/avatars/avatar2.svg",
       ),
@@ -72,7 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
         content: "Я вышел",
         from_id: "0",
         c_id: "2",
-        time: "9:41"
+        time: "9:41",
+        date: "02.01.23"
       ),],
         avatar: "assets/avatars/avatar3.svg",
       ),
@@ -85,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
         content: "Я вышел",
         from_id: "0",
         c_id: "3",
-        time: "9:23"
+        time: "9:23",
+        date: "03.01.23"
       ),],
         avatar: "assets/avatars/avatar4.svg",
       ),

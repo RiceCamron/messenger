@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:messenger/IndividualPage/Widgets/DateDivider.dart';
 import 'package:messenger/Models/ChatModel.dart';
 import 'package:messenger/Models/MessageModel.dart';
 import 'package:messenger/IndividualPage/Cards/OwnMessageCard.dart';
@@ -113,10 +114,11 @@ class _IndividualPageState extends State<IndividualPage> {
                   if (index == messages.length) {
                     return Container(
                       height: 68,
+                      child: 
+            DateDivider(date: messages.first.date,),
                     );
                   }
-                  final reversedIndex =
-                      messages.length - 1 - index;
+                  final reversedIndex = messages.length - 1 - index;
                   if (messages[reversedIndex].from_id == "0") {
                     return OwnMessageCard(
                       message: messages[reversedIndex],
@@ -155,16 +157,15 @@ class _IndividualPageState extends State<IndividualPage> {
                               color: Color.fromRGBO(237, 242, 246, 1),
                             ),
                             child: Transform.rotate(
-      angle: 45 * pi / 180, // Наклон на 10 градусов
-      child: IconButton(
-        icon: Icon(
-          Icons.attach_file,
-          color: Colors.black,
-        ),
-        onPressed: () {},
-      ),
-    ),
-
+                              angle: 45 * pi / 180, // Наклон на 10 градусов
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.attach_file,
+                                  color: Colors.black,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ),
                           ),
                         ),
                         Container(

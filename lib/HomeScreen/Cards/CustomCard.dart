@@ -25,42 +25,51 @@ class CustomCard extends StatelessWidget {
           ),
         );
       },
-      child: Column(
+      child: Stack(
         children: [
-          ListTile(
-            leading: CircleAvatar(
-              radius: 20,
-              child: SvgPicture.asset(
-                chatModel.avatar,
-                height: 50,
-                width: 50,
-              ),
-              backgroundColor: Color.fromARGB(0, 66, 164, 245),
-            ),
-            title: Text(
-              chatModel.c_name,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Row(
-              children: [
-                chatModel.messages.last.from_id == "0"
-                    ? Text("Вы: ")
-                    : Text(""),
-                Text(chatModel.messages.last.content),
-                SizedBox(
-                  width: 3,
-                ),
-                // Icon(Icons.done_all),
-                // SizedBox(
-                //   width: 3,
-                // ),
-              ],
-            ),
-          ),
           Container(
-            height: 1,
-            width: MediaQuery.of(context).size.width - 40,
-            color: Color.fromRGBO(237, 242, 246, 1),
+            alignment: Alignment.centerRight,
+            padding: EdgeInsets.only(right: 10, top: 12),
+            child: Text(chatModel.messages.last.time, style: TextStyle(color: Color.fromRGBO(94, 122, 144, 1)),),
+          ),
+          Column(
+            children: [
+              ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  child: SvgPicture.asset(
+                    chatModel.avatar,
+                    height: 50,
+                    width: 50,
+                  ),
+                  backgroundColor: Color.fromARGB(0, 66, 164, 245),
+                ),
+                title: Text(
+                  chatModel.c_name,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                subtitle: Row(
+                  children: [
+                    chatModel.messages.last.from_id == "0"
+                        ? Text("Вы: ")
+                        : Text(""),
+                    Text(chatModel.messages.last.content),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    // Icon(Icons.done_all),
+                    // SizedBox(
+                    //   width: 3,
+                    // ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 1,
+                width: MediaQuery.of(context).size.width - 40,
+                color: Color.fromRGBO(237, 242, 246, 1),
+              ),
+            ],
           ),
         ],
       ),
