@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:messenger/Models/MessageModel.dart';
 
 class ReplyCard extends StatelessWidget {
   const ReplyCard({Key? key, required this.message}) : super(key: key);
-  final String message;
+  final MessageModel message;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class ReplyCard extends StatelessWidget {
                   bottom: 20,
                 ),
                 child: Text(
-                  message,
+                  message.content,
                   style: TextStyle(fontSize: 16),
                 ),
               ),
@@ -38,19 +39,18 @@ class ReplyCard extends StatelessWidget {
                 bottom: 2,
                 right: 10,
                 child: Text(
-                  "20.58",
+                  message.time,
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.grey[600],
                   ),
                 ),
               ),
-              // Add the curved tail using CustomPaint
               Positioned(
-                top: 29,
+                top: 26,
                 left: 5,
                 child: CustomPaint(
-                  painter: CurvedTailPainter(),
+                  painter: CurvedLeftTailPainter(),
                 ),
               ),
             ],
@@ -61,11 +61,11 @@ class ReplyCard extends StatelessWidget {
   }
 }
 
-class CurvedTailPainter extends CustomPainter {
+class CurvedLeftTailPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final Paint paint = Paint()
-      ..color = Color.fromRGBO(237, 242, 246, 1)// Set the color of the tail
+      ..color = Color.fromRGBO(237, 242, 246, 1)
       ..strokeWidth = 2.0;
 
     final Path path = Path()

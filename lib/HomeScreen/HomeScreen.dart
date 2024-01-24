@@ -3,11 +3,10 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:messenger/ChatModel.dart';
-import 'package:messenger/CustomCard.dart';
-import 'package:messenger/MessageModel.dart';
-import 'package:messenger/SearchBar.dart';
-import 'package:messenger/user.dart';
+import 'package:messenger/HomeScreen/Cards/CustomCard.dart';
+import 'package:messenger/Models/ChatModel.dart';
+import 'package:messenger/Models/MessageModel.dart';
+import 'package:messenger/Models/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.user});
@@ -26,25 +25,69 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    messagesModel = [
-      MessageModel(
-        content: "Уже сделал?",
-        from_id: "0",
-        c_id: "0",
-      ),
-      MessageModel(
-        content: "Уже сделал?",
-        from_id: "0",
-        c_id: "0",
-      ),
-    ];
     chatModels = [
       ChatModel(
         c_name: "Виктор Власов",
         user_id: "1",
         c_id: "0",
-        message: messagesModel[0],
+        messages: [MessageModel(
+        content: "Сделай мне кофе, пожалуйста",
+        from_id: "0",
+        c_id: "0",
+        time: "21:41"
+      ),
+      MessageModel(
+        content: "Окей",
+        from_id: "1",
+        c_id: "0",
+        time: "21:41"
+      ),
+      MessageModel(
+        content: "Уже сделал?",
+        from_id: "0",
+        c_id: "0",
+        time: "21:41"
+      ),],
         avatar: "assets/avatars/avatar1.svg",
+      ),
+      ChatModel(
+        c_name: "Саша Алексеев",
+        user_id: "1",
+        c_id: "0",
+        messages: [
+      MessageModel(
+        content: "Я готов",
+        from_id: "1",
+        c_id: "1",
+        time: "20:20"
+      ),],
+        avatar: "assets/avatars/avatar2.svg",
+      ),
+      ChatModel(
+        c_name: "Пётр Жаринов",
+        user_id: "1",
+        c_id: "0",
+        messages: [
+      MessageModel(
+        content: "Я вышел",
+        from_id: "0",
+        c_id: "2",
+        time: "9:41"
+      ),],
+        avatar: "assets/avatars/avatar3.svg",
+      ),
+      ChatModel(
+        c_name: "Алина Жукова",
+        user_id: "1",
+        c_id: "0",
+        messages: [
+      MessageModel(
+        content: "Я вышел",
+        from_id: "0",
+        c_id: "3",
+        time: "9:23"
+      ),],
+        avatar: "assets/avatars/avatar4.svg",
       ),
     ];
   }
@@ -70,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   contentPadding: EdgeInsets.symmetric(vertical: 10.0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18.0),
-                    borderSide: BorderSide.none, // Убираем рамку
+                    borderSide: BorderSide.none,
                   ),
                   hintText: "Поиск",
                   hintStyle: TextStyle(color: Color.fromRGBO(157, 183, 203, 1)),
@@ -91,18 +134,6 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0.0,
           actions: [],
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(
-        //         builder: (builder) => CreateGroup(),
-        //       ),
-        //     );
-        // },
-        //   backgroundColor: Colors.blue[400],
-        //   child: Icon(Icons.chat, color: Colors.white),
-        // ),
         body: ListView.builder(
             itemCount: chatModels.length,
             itemBuilder: (context, index) {
@@ -112,7 +143,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   user: widget.user,
                 ),
               );
-              // separatorBuilder: (context, i) => Divider(),
             }));
   }
 }

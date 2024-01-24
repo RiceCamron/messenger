@@ -16,7 +16,6 @@ class _SearchBarState extends State<SearchBar> {
       
       child: Row(
         children: [
-          // Icon(loop),
           TextField(
           controller: _controller,
           style: TextStyle(
@@ -25,7 +24,6 @@ class _SearchBarState extends State<SearchBar> {
             fontWeight: FontWeight.bold,
           ),
           onSubmitted: (value) {
-            // Обработка введенного текста
           },
           ),
         ],

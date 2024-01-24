@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:messenger/HomeScreen.dart';
-import 'package:messenger/user.dart';
+import 'package:messenger/HomeScreen/HomeScreen.dart';
+import 'package:messenger/Models/user.dart';
 
 
 Future<void> main() async {
@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          fontFamily: "Futura",
           primaryColor: Colors.green,
           accentColor: Color.fromRGBO(19, 30, 52, 1),
         ),
