@@ -4,6 +4,7 @@ class MessageModel {
   String c_id;
   String time;
   String date;
+  
   MessageModel({
     required this.content,
     required this.from_id,

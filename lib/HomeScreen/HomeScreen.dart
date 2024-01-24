@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     chatModels = [
       ChatModel(
         c_name: "Виктор Власов",

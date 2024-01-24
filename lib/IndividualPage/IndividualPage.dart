@@ -114,8 +114,9 @@ class _IndividualPageState extends State<IndividualPage> {
                   if (index == messages.length) {
                     return Container(
                       height: 68,
-                      child: 
-            DateDivider(date: messages.first.date,),
+                      child: DateDivider(
+                        date: messages.first.date,
+                      ),
                     );
                   }
                   final reversedIndex = messages.length - 1 - index;
@@ -221,9 +222,17 @@ class _IndividualPageState extends State<IndividualPage> {
                                   if (_scrollController.hasClients) {
                                     _scrollController.animateTo(
                                         _scrollController
-                                            .position.maxScrollExtent,
+                                            .position.minScrollExtent,
                                         duration: Duration(milliseconds: 300),
                                         curve: Curves.easeOut);
+                                    setState(() {
+                                      messages.add(MessageModel(
+                                          content: _controller.text,
+                                          from_id: "0",
+                                          c_id: messages.last.c_id,
+                                          time: "00:08",
+                                          date: "25.01.24"));
+                                    });
                                   }
                                   _controller.clear();
                                   sendButton = false;

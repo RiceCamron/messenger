@@ -11,7 +11,7 @@ class DateDivider extends StatelessWidget {
       height: 50,
       width: double.infinity,
       // color: Colors.grey[200],
-      child:  Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
@@ -22,12 +22,12 @@ class DateDivider extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 18.0, right: 18.0),
             child: Text(
-                date,
-                style: TextStyle(
-                  fontSize: 14,
-              color: Color.fromRGBO(157, 183, 203, 1),
-                ),
+              date,
+              style: TextStyle(
+                fontSize: 14,
+                color: Color.fromRGBO(157, 183, 203, 1),
               ),
+            ),
           ),
           Container(
             height: 1,

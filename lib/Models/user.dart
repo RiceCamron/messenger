@@ -4,6 +4,7 @@ class User {
   String phone;
   String email;
   String password;
+
   User(
     this.id,
     this.username,

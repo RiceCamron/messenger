@@ -18,63 +18,61 @@ class OwnMessageCard extends StatelessWidget {
         child: Stack(
           children: [
             Card(
-            color:Color.fromRGBO(60, 237, 120, 1),
-          elevation: 1,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-          
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                  right: 60,
-                  top: 8,
-                  bottom: 20,
-                ),
-                child: Text(
-                  message.content,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
+              color: Color.fromRGBO(60, 237, 120, 1),
+              elevation: 1,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
-              Positioned(
-                bottom: 2,
-                right: 10,
-                child: Row(
-                  children: [
-                    Text(
-                      message.time,
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20,
+                      right: 60,
+                      top: 8,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      message.content,
                       style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.grey[600],
+                        fontSize: 16,
+                        color: Colors.white,
                       ),
                     ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      Icons.done_all,
-                      size: 20,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-            ),
-
-            Positioned(
-                  top: 32,
-                  right: 22,
-                  child: CustomPaint(
-                    painter: CurvedRightTailPainter(),
                   ),
-                ),
+                  Positioned(
+                    bottom: 2,
+                    right: 10,
+                    child: Row(
+                      children: [
+                        Text(
+                          message.time,
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey[600],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.done_all,
+                          size: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              top: 32,
+              right: 22,
+              child: CustomPaint(
+                painter: CurvedRightTailPainter(),
+              ),
+            ),
           ],
         ),
       ),

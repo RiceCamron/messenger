@@ -30,7 +30,10 @@ class CustomCard extends StatelessWidget {
           Container(
             alignment: Alignment.centerRight,
             padding: EdgeInsets.only(right: 10, top: 12),
-            child: Text(chatModel.messages.last.time, style: TextStyle(color: Color.fromRGBO(94, 122, 144, 1)),),
+            child: Text(
+              chatModel.messages.last.time,
+              style: TextStyle(color: Color.fromRGBO(94, 122, 144, 1)),
+            ),
           ),
           Column(
             children: [

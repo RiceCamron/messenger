@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:messenger/HomeScreen/HomeScreen.dart';
 import 'package:messenger/Models/user.dart';
 
-
 Future<void> main() async {
-
-
   runApp(MyApp());
 }
 
@@ -18,6 +15,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.green,
           accentColor: Color.fromRGBO(19, 30, 52, 1),
         ),
-        home: HomeScreen(user: user,));
+        home: HomeScreen(
+          user: user,
+        ));
   }
 }
